@@ -1,21 +1,36 @@
-# Minghui Ni faculty and lab website
+# Minghui Ni — Personal Website (GitHub Pages)
 
-This static website is ready for GitHub Pages. Every field that needs personal content is marked with square brackets, such as `[Add bio]`.
+Static migration of https://minghui-ni.squarespace.com to free GitHub Pages hosting.
 
-## Publish
+## Structure
 
-1. Open the `minghuini-sdsu.github.io` repository on GitHub.
-2. Upload the **contents of this folder** (not the outer folder) to the repository root.
-3. Commit the upload.
-4. In **Settings → Pages**, choose **Deploy from a branch**, branch **main**, folder **/(root)**, and save.
-5. Visit `https://minghuini-sdsu.github.io/` after GitHub finishes deploying.
+- `index.html` — Home / bio
+- `research.html` — Research lines
+- `publications.html` — Publications
+- `teaching.html` — Teaching experience
+- `cv.html` — CV download page
+- `styles.css` — Site stylesheet
+- `assets/` — Images and CV PDF
+  - `profile.jpg` — headshot
+  - `research-bivalence.png` — research illustration 1
+  - `research-bias.jpg` — research illustration 2
+  - `cv.pdf` — full CV
 
-## Customize
+## Deploy to GitHub Pages (free)
 
-- Search all files for `[` to find placeholders.
-- Put a professional photo in `assets/minghui-ni.jpg`, then replace the portrait placeholder in `index.html` with `<img src="assets/minghui-ni.jpg" alt="Portrait of Minghui Ni">`.
-- Add the CV PDF as `minghui-ni-cv.pdf` and update the link in `cv.html`.
-- Replace every `href="#"` with the correct DOI, PDF, or profile link.
-- Edit `style.css` to change colors and typography.
+1. Create a GitHub account at https://github.com (if you don't have one).
+2. Create a **new public repository** named `<username>.github.io` (replace `<username>` with your GitHub username). This special name makes the site live at `https://<username>.github.io`.
+3. Upload all files in this folder to the repository (drag-and-drop on github.com works, or `git push`).
+4. Go to the repo's **Settings → Pages** and set Source to "Deploy from a branch", branch `main`, folder `/ (root)`. Save.
+5. After a minute or two, the site is live at `https://<username>.github.io` — free, no Squarespace subscription needed.
 
-No paid services or custom domain are required.
+## Custom domain (optional, ~$12/year)
+
+If you own a domain (e.g. `minghuini.com`):
+1. Add a file named `CNAME` (no extension) in the repo root containing just the domain name.
+2. At your domain registrar, add DNS records: an `A` record pointing to GitHub Pages IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153), or a `CNAME` record pointing to `<username>.github.io`.
+3. In repo Settings → Pages, enter the custom domain and enforce HTTPS.
+
+## Updating content later
+
+Edit the HTML files and push — GitHub Pages rebuilds automatically in ~1 minute. No build step, no dependencies.
